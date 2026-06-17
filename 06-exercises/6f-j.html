@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6f-j</title>
+  </head>
+  <body>
+    <button onclick="
+      guess = 'heads';
+      if (guess === result) {
+        console.log('You win!');
+      } else {
+        console.log('You lose!');
+      }">Heads</button>
+    <button onclick="
+      guess = 'tails';
+      guess === result ? console.log('You win!') : console.log('You lose!')
+    ">Tails</button>
+    <script>
+      const random = Math.random();
+      let result = '';
+      let guess = '';
+
+      result = random < 0.5 ? 'heads' : 'tails';
+    </script>
+  </body>
+</html>

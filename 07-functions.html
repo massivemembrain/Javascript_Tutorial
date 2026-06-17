@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      //camelCase is best practice for functions too
+      // function function1() {
+      //   console.log('hello');
+      //   console.log(2 + 2);
+      // }
+
+      // function1();
+      // function1();
+
+      //Takes a parameter, or takes a number is the correct lingo
+      function calculateTax(parameter1, taxPercent = 0.1) {
+        console.log(parameter1 * taxPercent);
+      }
+
+      //Passes a value into the function
+      //The value being passed: argument
+      calculateTax(2000, 0.2);
+      //Returns NaN, because the parameter is undefined if we don't give it
+      //undefined operation with a number is NaN not a number
+      calculateTax(5000);
+
+    </script>
+  </body>
+</html>

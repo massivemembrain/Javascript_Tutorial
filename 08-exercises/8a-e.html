@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8a-e</title>
+  </head>
+  <body>
+
+    <script>
+      const basketball = {
+        name: 'basketball',
+        price: 2095,
+        ['delivery-time']: '3 days'
+      };
+
+      const baseball = {
+        name: 'baseball',
+        price: 3095,
+        ['delivery-time']: '3 days'
+      }
+
+      basketball.price += 500;
+
+      console.log(basketball);
+
+      function compareProduct(product1, product2) {
+        if (product1.price > product2.price) {
+          return product2;
+        } else {
+          return product1;
+        }
+      }
+
+      function isSameProduct(product1, product2) {
+        if (product1.price === product2.price && product1.name === product2.name) {
+          return true;
+        }
+        return false;
+      }
+
+      console.log('The cheaper product is:')
+      console.log(compareProduct(basketball, baseball));
+      console.log(isSameProduct(baseball, basketball));
+
+      
+    </script>
+  </body>
+</html>

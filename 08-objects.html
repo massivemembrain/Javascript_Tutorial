@@ -53,14 +53,46 @@
       console.log('hello'.toUpperCase());
 
       const object1 = {
-        message: 'hello'
+        message: 'Good job!'
       };
 
       const object2 = object1;
 
       object1.message = 'Good job!';
       console.log(object1);
+      console.log(object2);
+      
+      const object3 = {
+        message: 'Good job!'
+      };
 
+      // Comparing references and not the values themselves
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      }
+      // Destructuring: taking message, price out of object into a variable
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
+
+      // Shorthand Property: shortcut to assign object to variable
+      const object5 = {
+        message: message,
+        method: function function1() {
+          console.log('method');
+        },
+        // Method is the exact same as above, just different syntax
+        //Shorthand method
+        method1() {
+          console.log('method');
+        }
+      };
+      console.log(object5);
+      object5.method();
     </script>
   </body>
 </html>

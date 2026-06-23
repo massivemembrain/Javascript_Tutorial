@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9a-b</title>
+  </head>
+  <body>
+
+    <button onclick="getButton();">9a</button>
+    <button class="js-button" onclick="get9b();">9b</button>
+    <script>
+      function getButton() {
+        const button = document.querySelector('button');
+        console.log(button.innerHTML);
+      }
+      function get9b() {
+        const button = document.querySelector('.js-button');
+        button.innerHTML = '9b done!';
+      }
+    </script>
+  </body>
+</html>

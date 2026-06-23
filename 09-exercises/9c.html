@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9c</title>
+  </head>
+  <body>
+
+    <button onclick="coinChoice('heads');">heads</button>
+    <button onclick="coinChoice('tails');">tails</button>
+    <p class="js-result"></p>
+
+    <script>
+      function coinChoice(choice) {
+        const result = document.querySelector('.js-result');
+        result.innerHTML = `Your choice: ${choice}`;
+      }
+    </script>
+  </body>
+</html>

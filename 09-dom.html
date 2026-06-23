@@ -4,12 +4,19 @@
     <title>DOM</title>
   </head>
   <body>
-    <button>
-      hello
-    </button>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
     <script>
       // Grab html and put it in our JavaScript
-      console.log(document.querySelector('button'));
+      //innerHTML is the HTML within the tags
+      console.log(document.querySelector('button').innerHTML);
+      // Common format to put into multiple lines
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      //using class selector, js to say it will be used in js
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
 
       // console.log(document.title);
       // document.title = 'Changed';

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10c</title>
+  </head>
+  <body>
+    <button class="js-button">Test</button>
+    <script>
+      const buttonElement = document.querySelector('button')
+      if (buttonElement.classList.contains('js-button')) {
+        console.log('JS-Button exists');
+      } else {
+        console.log('Could not find js-button');
+      }
+    </script>
+  </body>
+</html>

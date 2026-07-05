@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11i</title>
+  </head>
+  <body>
+    <script>
+
+      console.log(addNum([1, 2, 3], 2));
+      console.log(addNum([1, 2, 3], 3));
+      console.log(addNum([-2, -1, 0, 99], 2));
+
+      function addNum(array, num) {
+        const newNums = [];
+
+        for (let i = 0; i < array.length; i++) {
+          newNums.push(array[i] + num);
+            
+        }
+        return newNums;
+      }
+    </script>
+  </body>
+</html>

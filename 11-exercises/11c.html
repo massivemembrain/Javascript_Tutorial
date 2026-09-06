@@ -10,10 +10,9 @@
       console.log(arraySwap(['hi', 'hello', 'good']));
       
       function arraySwap(array) {
-        lastIndex = array.length - 1;
-        firstValue = array[0];
-        array[0] = array[lastIndex];
-        array[lastIndex] = firstValue;
+        temp = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = temp;
         return array;
       }
     </script>

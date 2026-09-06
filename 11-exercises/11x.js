@@ -1,4 +1,5 @@
-const todoList = [{
+const todoList = JSON.parse(localStorage.getItem('todoList')) ||
+ [{
   name: 'make dinner', 
   dueDate: '2022-09-02'
  }, {
@@ -20,6 +21,7 @@ function renderTodoList() {
       <button onclick="
         todoList.splice(${i}, 1);
         renderTodoList();
+        localStorage.setItem('todoList', JSON.stringify(todoList));
       " class="delete-todo-button">Delete</button>
     `;
     todoListHTML += html;
@@ -37,11 +39,13 @@ function addTodo() {
 
   todoList.push({
     // name: name,
-    name, 
+    name,
     //dueDate: dueDate
     dueDate
   });
 
   inputElement.value = '';
   renderTodoList();
+
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12g-i</title>
+  </head>
+  <body>
+    <button onclick="addMessage()">
+      Add
+    </button>
+    <button onclick="deleteMessage()">
+      Delete
+    </button>
+
+    <script>
+
+      let messageCount = 2;
+      let areMessagesShowing = false;
+      function newMessage() {
+        if (!areMessagesShowing && messageCount > 0) {
+          document.title = `(${messageCount}) New messages`;
+          areMessagesShowing = true;
+        } else {
+          document.title = `App`;
+          areMessagesShowing = false;
+        }
+      }
+
+      function addMessage() {
+        messageCount++;
+      }
+
+      function deleteMessage() {
+        if (messageCount > 0) {
+          messageCount--;
+        }
+      }
+
+      setInterval(newMessage, 1000);
+    </script>
+  </body>
+</html>

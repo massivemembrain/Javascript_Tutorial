@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <script>
+      // //Hoisting: calling the function b4 it's created
+      // greeting();
+      // function greeting() {
+      //   console.log('hello');
+      // }
+      // greeting();
+
+      // const num = 2;
+      // //Functions are also values, they can be stored
+      // //semicolon at end of function body because it is stored
+      // //Hoisting doesn't work when saving a function
+      // //  to a varible like this
+      // const function1 = function greeting() {
+      //   console.log('hello2');        
+      // };
+      // //Now ur assigning to an anonymous function
+      // const function2 = function() {
+      //   console.log('hello2');        
+      // };
+      // //prints out the whole function fr
+      // console.log(function1);
+      // console.log(typeof function1);
+      // function1();
+
+      // //Function saved inside object -> method
+      // const object1 = {
+      //   num: 2,
+      //   fun: function() {
+      //     console.log('hello3');
+      //   }
+      // };
+
+      // object1.fun();
+
+      // function display(param) {
+      //   console.log(param);
+      // }
+      // display(2);
+
+      // function run(param) {
+      //   param();
+      // }
+      // //passing a function into a function
+      // run(function() {
+      //   console.log('hello4');
+      // });
+
+      //built-in function to do an operation in the future
+      //Simple example of asynchronous code
+      //(function, time in milliseconds)
+      // setTimeout(function() {
+      //   console.log('timeout');
+      //   console.log('timeout2');
+      // }, 3000);
+
+      // console.log('next line');
+
+      // //Runs the function every interval given
+      // //(function, interval in milliseconds)
+      // setInterval(function() {
+      //   console.log('interval');
+      // }, 3000);
+
+      // console.log('next line 2');
+
+
+      // Another way to loop through an array
+
+      //forEach loops through an array
+      //value represents each value in the array
+      //preferred way to loop through an array
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach(function(value, index) {
+        if (value === 'wash dishes') {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+    </script>
+  </body>
+</html>

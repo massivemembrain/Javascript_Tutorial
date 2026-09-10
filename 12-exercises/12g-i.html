@@ -4,10 +4,10 @@
     <title>12g-i</title>
   </head>
   <body>
-    <button onclick="addMessage()">
+    <button class="js-add-button">
       Add
     </button>
-    <button onclick="deleteMessage()">
+    <button class="js-delete-button">
       Delete
     </button>
 
@@ -25,15 +25,17 @@
         }
       }
 
-      function addMessage() {
-        messageCount++;
-      }
+      document.querySelector('.js-add-button')
+        .addEventListener('click', () => {
+          messageCount++;
+        });
 
-      function deleteMessage() {
-        if (messageCount > 0) {
-          messageCount--;
-        }
-      }
+      document.querySelector('.js-delete-button')
+        .addEventListener('click', () => {
+          if (messageCount > 0) {
+            messageCount--;
+          }
+        });
 
       setInterval(newMessage, 1000);
     </script>

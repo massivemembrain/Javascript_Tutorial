@@ -15,18 +15,40 @@ let intervalId;
 //thats why we save the SetInterval function to a variable
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalID = setInterval(() => {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
-  } else {
 
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Stop Playing';
+  } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Auto Play';
   }
-  
 }
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
+document.querySelector('.js-auto-play-button')
+  .addEventListener('click', () => {
+    autoPlay();
+  })
+
+document.querySelector('.js-reset-score-button')
+  .addEventListener('click', () => {
+    resetScore();
+})
 
 //playGame('rock') will not work as a function parameter because it returns nothing
 //the parameter has to be a function itself
@@ -54,6 +76,10 @@ document.body.addEventListener('keydown', (event) => {
     playGame('paper');
   } else if (event.key === 's') {
     playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
   }
 });
 
@@ -103,8 +129,8 @@ function playGame (playerMove) {
     updateResultElement(result);
     document.querySelector('.js-moves')
         .innerHTML = `You
-        <img src="images/${playerMove}-emoji.png" class="move-icon">
-        <img src="images/${computerMove}-emoji.png" class="move-icon">
+        <img src="${playerMove}-emoji.png" class="move-icon">
+        <img src="${computerMove}-emoji.png" class="move-icon">
         Computer`;
     updateScoreElement();
 }

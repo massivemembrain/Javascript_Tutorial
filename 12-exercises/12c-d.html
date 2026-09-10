@@ -4,15 +4,16 @@
     <title>12c-d</title>
   </head>
   <body>
-    <button  onclick="changeToFinished()" class="js-start-button">Start</button>
+    <button  class="js-start-button">Start</button>
     <script>
-      function changeToFinished() {
+      const buttonElement = document.querySelector('.js-start-button');
+      buttonElement.addEventListener('click', () => {
         const inputElement = document.querySelector('.js-start-button');
         inputElement.innerHTML = 'Loading...';
-        setTimeout(function() {   
+        setTimeout(() => {   
           inputElement.innerHTML = 'Finished!';
         }, 1000)
-      }
+      })
     </script>
   </body>
 </html>

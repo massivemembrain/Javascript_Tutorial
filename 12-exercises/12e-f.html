@@ -5,23 +5,24 @@
   </head>
   <body>
     
-    <button onclick="addToCart()" class="js-add-button">Add to cart</button>
+    <button class="js-add-button">Add to cart</button>
     <div class="js-add">
 
     </div>
     
     <script>
       let timeOutId;
-      function addToCart() {    
-        const html = `<p>Added</p>`;
-        const innerElement = document.querySelector('.js-add');
-        innerElement.innerHTML = html;
+      document.querySelector('.js-add-button')
+        .addEventListener('click', () => {
+          const html = `<p>Added</p>`;
+          const innerElement = document.querySelector('.js-add');
+          innerElement.innerHTML = html;
 
-        clearTimeout(timeOutId);
-        timeOutId = setTimeout(function() {
-          innerElement.innerHTML = ``
-        }, 2000);
-      }
+          clearTimeout(timeOutId);
+          timeOutId = setTimeout(() => {
+            innerElement.innerHTML = ``
+          }, 2000);
+        });
     </script>
   </body>
 </html>

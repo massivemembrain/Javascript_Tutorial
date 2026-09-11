@@ -32,6 +32,41 @@ function autoPlay() {
   }
 }
 
+document.querySelector('.js-reset-score-button')
+  .addEventListener('click', () => {
+    resetScoreConfirmation();
+});
+
+
+function resetScoreConfirmation() {
+  document.querySelector('.js-confirmation-message')
+    .innerHTML =`
+      Are you sure you want to reset the score
+      <button class="js-yes-button yes-button">
+        Yes
+      </button>
+      <button class="js-no-button no-button">
+        No
+      </button>
+    `;
+
+  document.querySelector('.js-yes-button')
+    .addEventListener('click', () => {
+      resetScore();
+      document.querySelector('.js-confirmation-message')
+        .innerHTML = ``;
+  });
+
+  document.querySelector('.js-no-button')
+    .addEventListener('click', () => {
+      document.querySelector('.js-confirmation-message')
+        .innerHTML = ``;
+  });
+
+}
+
+
+
 function resetScore() {
   score.wins = 0;
   score.losses = 0;
@@ -43,12 +78,7 @@ function resetScore() {
 document.querySelector('.js-auto-play-button')
   .addEventListener('click', () => {
     autoPlay();
-  })
-
-document.querySelector('.js-reset-score-button')
-  .addEventListener('click', () => {
-    resetScore();
-})
+});
 
 //playGame('rock') will not work as a function parameter because it returns nothing
 //the parameter has to be a function itself
@@ -79,7 +109,7 @@ document.body.addEventListener('keydown', (event) => {
   } else if (event.key === 'a') {
     autoPlay();
   } else if (event.key === 'Backspace') {
-    resetScore();
+    resetScoreConfirmation();
   }
 });
 

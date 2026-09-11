@@ -35,7 +35,9 @@ body {
 }
 
 .reset-score-button,
-.auto-play-button {
+.auto-play-button,
+.yes-button,
+.no-button {
   background-color: white;
   border: none;
   font-size: 15px;
